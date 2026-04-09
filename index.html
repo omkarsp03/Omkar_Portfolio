@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omkar Patil | Software Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Omkar Satish Patil — Computer Science Engineer, Full-Stack Developer, and AI/ML enthusiast. Explore projects, skills, and experience." />
+  <meta name="keywords" content="Omkar Patil, Portfolio, Developer, Computer Science, Python, Java, AI, ML" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <span class="loader-text">OP</span>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- 3D Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-bracket">&lt;</span>OP<span class="logo-bracket"> /&gt;</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link" data-index="0">About</a>
+      <a href="#skills" class="nav-link" data-index="1">Skills</a>
+      <a href="#experience" class="nav-link" data-index="2">Experience</a>
+      <a href="#projects" class="nav-link" data-index="3">Projects</a>
+      <a href="#certifications" class="nav-link" data-index="4">Certifications</a>
+      <a href="#contact" class="nav-link" data-index="5">Contact</a>
+    </div>
+    <div class="nav-right-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <button id="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#certifications" class="mobile-link">Certifications</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-badge" data-animate="fade-up">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-title" data-animate="fade-up" data-delay="0.1">
+          <span class="hero-greeting">Hello, I'm</span>
+          <span class="hero-name">
+            <span class="char-wrap"><span class="char">O</span></span><span class="char-wrap"><span class="char">m</span></span><span class="char-wrap"><span class="char">k</span></span><span class="char-wrap"><span class="char">a</span></span><span class="char-wrap"><span class="char">r</span></span>
+            <span class="hero-name-space"> </span>
+            <span class="char-wrap"><span class="char">P</span></span><span class="char-wrap"><span class="char">a</span></span><span class="char-wrap"><span class="char">t</span></span><span class="char-wrap"><span class="char">i</span></span><span class="char-wrap"><span class="char">l</span></span>
+          </span>
+        </h1>
+        <div class="hero-role" data-animate="fade-up" data-delay="0.2">
+          <span class="role-line"></span>
+          <span id="typed-role" class="role-text"></span>
+          <span class="typed-cursor">|</span>
+        </div>
+        <p class="hero-desc" data-animate="fade-up" data-delay="0.3">
+          Computer Science undergraduate crafting <em>scalable applications</em> and <em>AI-powered solutions</em>. Passionate about clean code, innovative problem-solving, and building production-ready software.
+        </p>
+        <div class="hero-cta" data-animate="fade-up" data-delay="0.4">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <span>Get in Touch</span>
+          </a>
+        </div>
+        <div class="hero-stats" data-animate="fade-up" data-delay="0.5">
+          <div class="stat">
+            <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number" data-count="8.72">0</span>
+            <span class="stat-label">CGPA</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Hackathons</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll Down</span>
+      </div>
+      <!-- Floating shapes -->
+      <div class="hero-float hero-float-1"></div>
+      <div class="hero-float hero-float-2"></div>
+      <div class="hero-float hero-float-3"></div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">01 — About Me</span>
+          <h2 class="section-title">Turning Ideas Into<br><span class="gradient-text">Digital Reality</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-image-wrap" data-animate="fade-right">
+            <div class="about-image-card">
+              <div class="about-image-glow"></div>
+              <div class="about-avatar">
+                <span class="avatar-initials">OP</span>
+              </div>
+              <div class="about-image-details">
+                <span class="detail-tag">📍 Kolhapur, Maharashtra</span>
+                <span class="detail-tag">🎓 BTech CSE</span>
+                <span class="detail-tag">💼 Open to Work</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-text" data-animate="fade-left">
+            <p>I'm a <strong>Computer Science undergraduate</strong> at DY Patil Agriculture and Technical University with a strong foundation in <strong>Data Structures, Algorithms, and OOP</strong>.</p>
+            <p>I specialize in building <strong>scalable, production-ready applications</strong> using Python, Java, C++, and modern frameworks. My experience spans <strong>AI/ML, real-time systems, and full-stack development</strong>.</p>
+            <p>Beyond coding, I lead the <strong>Code Wizards Coding Club</strong>, organize technical workshops, and drive cybersecurity awareness as Media Director of the <strong>Cyber Warriors Club</strong>.</p>
+            <div class="about-info-grid">
+              <div class="info-item">
+                <span class="info-label">Education</span>
+                <span class="info-value">BTech CSE — CGPA 8.72</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Diploma</span>
+                <span class="info-value">CS Engineering — 81.94%</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Location</span>
+                <span class="info-value">Kolhapur, Maharashtra</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Interests</span>
+                <span class="info-value">AI, DevOps, Full-Stack</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">02 — Skills</span>
+          <h2 class="section-title">My Technical<br><span class="gradient-text">Arsenal</span></h2>
+        </div>
+        <div class="skills-grid">
+          <!-- Languages -->
+          <div class="skill-category" data-animate="fade-up" data-delay="0">
+            <div class="skill-category-header">
+              <div class="skill-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3>Languages</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-level="advanced">Python</span>
+              <span class="skill-tag" data-level="advanced">Java</span>
+              <span class="skill-tag" data-level="advanced">C++</span>
+              <span class="skill-tag" data-level="advanced">C</span>
+              <span class="skill-tag" data-level="advanced">MySQL</span>
+            </div>
+          </div>
+          <!-- Frameworks -->
+          <div class="skill-category" data-animate="fade-up" data-delay="0.1">
+            <div class="skill-category-header">
+              <div class="skill-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              </div>
+              <h3>Frameworks & Libraries</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-level="advanced">Pandas</span>
+              <span class="skill-tag" data-level="advanced">NumPy</span>
+              <span class="skill-tag" data-level="intermediate">Matplotlib</span>
+              <span class="skill-tag" data-level="intermediate">Next.js</span>
+              <span class="skill-tag" data-level="intermediate">React</span>
+              <span class="skill-tag" data-level="intermediate">YOLOv8</span>
+            </div>
+          </div>
+          <!-- Tools -->
+          <div class="skill-category" data-animate="fade-up" data-delay="0.2">
+            <div class="skill-category-header">
+              <div class="skill-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h3>DevOps & Tools</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-level="advanced">Git</span>
+              <span class="skill-tag" data-level="advanced">GitHub</span>
+              <span class="skill-tag" data-level="intermediate">Docker</span>
+              <span class="skill-tag" data-level="intermediate">Kubernetes</span>
+              <span class="skill-tag" data-level="intermediate">Jenkins</span>
+              <span class="skill-tag" data-level="intermediate">REST APIs</span>
+            </div>
+          </div>
+          <!-- Concepts -->
+          <div class="skill-category" data-animate="fade-up" data-delay="0.3">
+            <div class="skill-category-header">
+              <div class="skill-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h3>Core Concepts</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-level="advanced">DSA</span>
+              <span class="skill-tag" data-level="advanced">OOP</span>
+              <span class="skill-tag" data-level="advanced">DBMS</span>
+              <span class="skill-tag" data-level="intermediate">Machine Learning</span>
+              <span class="skill-tag" data-level="intermediate">Computer Vision</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">03 — Experience</span>
+          <h2 class="section-title">Professional<br><span class="gradient-text">Journey</span></h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item" data-animate="fade-up">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">Data Science Intern</h3>
+                  <span class="timeline-company">RacksonsIT, Pune</span>
+                </div>
+                <span class="timeline-date">Jul 2022 — Aug 2022</span>
+              </div>
+              <ul class="timeline-details">
+                <li>Worked on Data Processing, analysis and basic machine learning models.</li>
+                <li>Gained hands-on experience with Pandas, NumPy, and Matplotlib libraries.</li>
+                <li>Implemented real-world datasets to extract insights and predictions.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item" data-animate="fade-up">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">Lead — Code Wizards Coding Club</h3>
+                  <span class="timeline-company">DY Patil University</span>
+                </div>
+                <span class="timeline-date">Present</span>
+              </div>
+              <ul class="timeline-details">
+                <li>Organized coding sessions and technical workshops for students.</li>
+                <li>Led Student Fest 2026, coordinating with 5+ industry professionals.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item" data-animate="fade-up">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">Media Director — Cyber Warriors Club</h3>
+                  <span class="timeline-company">Quick Heal Foundation</span>
+                </div>
+                <span class="timeline-date">Present</span>
+              </div>
+              <ul class="timeline-details">
+                <li>Delivered cybersecurity awareness sessions on online safety and fraud prevention.</li>
+                <li>Managed media communications, promotions, and outreach activities.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">04 — Projects</span>
+          <h2 class="section-title">Featured<br><span class="gradient-text">Work</span></h2>
+        </div>
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card project-card-featured" data-animate="fade-up">
+            <div class="project-card-glow"></div>
+            <div class="project-card-content">
+              <div class="project-meta">
+                <span class="project-tag">AI / Computer Vision</span>
+                <span class="project-date">Dec 2025</span>
+              </div>
+              <h3 class="project-title">Sentinel Eye</h3>
+              <p class="project-subtitle">Real-Time Weapon Detection System</p>
+              <p class="project-desc">Real-time weapon detection for CCTV surveillance using YOLOv8 with 90%+ accuracy. Automated SMS, WhatsApp, and audio alerts. 40% latency reduction in feed processing pipeline.</p>
+              <div class="project-tech">
+                <span>YOLOv8</span><span>Python</span><span>OpenCV</span><span>Deep Learning</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/omkarsp03/Weapon-Detection" target="_blank" class="project-link">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card project-card-featured" data-animate="fade-up" data-delay="0.1">
+            <div class="project-card-glow"></div>
+            <div class="project-card-content">
+              <div class="project-meta">
+                <span class="project-tag">AI / Healthcare</span>
+                <span class="project-date">Feb 2026</span>
+              </div>
+              <h3 class="project-title">PharmaGuard</h3>
+              <p class="project-subtitle">Pharmacogenomic Risk Prediction</p>
+              <p class="project-desc">AI-powered platform analyzing patient genetic data (VCF files) to predict drug response risks. Integrated Groq API with Llama 3 for insights. Next.js & React frontend.</p>
+              <div class="project-tech">
+                <span>Next.js</span><span>React</span><span>Groq API</span><span>Llama 3</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/omkarsp03/PharmaGuard" target="_blank" class="project-link">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card" data-animate="fade-up" data-delay="0.2">
+            <div class="project-card-glow"></div>
+            <div class="project-card-content">
+              <div class="project-meta">
+                <span class="project-tag">AI / Healthcare</span>
+                <span class="project-date">2026</span>
+              </div>
+              <h3 class="project-title">AI Physio Coach</h3>
+              <p class="project-subtitle">Post-Surgery Physiotherapy</p>
+              <p class="project-desc">AI-powered post-surgery physiotherapy coaching system that provides personalized rehabilitation exercises and progress tracking.</p>
+              <div class="project-tech">
+                <span>Python</span><span>AI/ML</span><span>Healthcare</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/omkarsp03/AI-Post-Surgery-Physiotherapy-Coach" target="_blank" class="project-link">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div class="project-card" data-animate="fade-up" data-delay="0.3">
+            <div class="project-card-glow"></div>
+            <div class="project-card-content">
+              <div class="project-meta">
+                <span class="project-tag">Full Stack</span>
+                <span class="project-date">2026</span>
+              </div>
+              <h3 class="project-title">Reimbursement Mgmt</h3>
+              <p class="project-subtitle">Enterprise Expense Platform</p>
+              <p class="project-desc">Full-stack reimbursement management system for streamlined expense tracking, approval workflows, and financial reporting.</p>
+              <div class="project-tech">
+                <span>Java</span><span>MySQL</span><span>REST API</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/omkarsp03/Reimbursement-management" target="_blank" class="project-link">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div class="project-card" data-animate="fade-up" data-delay="0.4">
+            <div class="project-card-glow"></div>
+            <div class="project-card-content">
+              <div class="project-meta">
+                <span class="project-tag">Web Development</span>
+                <span class="project-date">2025</span>
+              </div>
+              <h3 class="project-title">Coding Club Website</h3>
+              <p class="project-subtitle">Community Platform</p>
+              <p class="project-desc">Dynamic website for the Code Wizards Coding Club featuring event management, member profiles, and resource sharing.</p>
+              <div class="project-tech">
+                <span>HTML/CSS</span><span>JavaScript</span><span>Web</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/omkarsp03/Coding-Club-Website" target="_blank" class="project-link">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HACKATHONS ==================== -->
+    <section id="hackathons" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">Competitions</span>
+          <h2 class="section-title">Hackathon<br><span class="gradient-text">Achievements</span></h2>
+        </div>
+        <div class="hackathons-row">
+          <div class="hackathon-badge" data-animate="fade-up">
+            <div class="hackathon-rank">🏆 4th</div>
+            <h4>Rift Hackathon</h4>
+            <p>Physics Wallah Institute of Innovation</p>
+          </div>
+          <div class="hackathon-badge" data-animate="fade-up" data-delay="0.1">
+            <div class="hackathon-rank">🚀</div>
+            <h4>Hacktopia 2025</h4>
+            <p>Pimpri Chinchwad College of Engineering, Pune</p>
+          </div>
+          <div class="hackathon-badge" data-animate="fade-up" data-delay="0.2">
+            <div class="hackathon-rank">⚡</div>
+            <h4>Tenet Hack 2025</h4>
+            <p>AISSMS, Pune</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS ==================== -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">05 — Certifications</span>
+          <h2 class="section-title">Professional<br><span class="gradient-text">Credentials</span></h2>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card" data-animate="fade-up">
+            <div class="cert-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h4>Python Programming</h4>
+            <span class="cert-issuer">IBM</span>
+            <span class="cert-date">December 2025</span>
+            <p>Data structures, functions, and application development.</p>
+          </div>
+          <div class="cert-card" data-animate="fade-up" data-delay="0.1">
+            <div class="cert-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h4>DevOps</h4>
+            <span class="cert-issuer">IBM</span>
+            <span class="cert-date">May 2026</span>
+            <p>GitHub, Docker, Kubernetes, Jenkins, CI/CD pipelines.</p>
+          </div>
+          <div class="cert-card" data-animate="fade-up" data-delay="0.2">
+            <div class="cert-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h4>C, C++, DS & Core Java</h4>
+            <span class="cert-issuer">Certification</span>
+            <span class="cert-date">May 2022</span>
+            <p>Programming fundamentals, data structures, OOP concepts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">06 — Contact</span>
+          <h2 class="section-title">Let's Build<br><span class="gradient-text">Together</span></h2>
+          <p class="section-subtitle">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-cards" data-animate="fade-up">
+            <a href="mailto:omkarsp87@gmail.com" class="contact-card">
+              <div class="contact-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <span class="contact-card-label">Email</span>
+                <span class="contact-card-value">omkarsp87@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+918767404875" class="contact-card">
+              <div class="contact-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <span class="contact-card-label">Phone</span>
+                <span class="contact-card-value">+91 8767404875</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/omkar-patil03" target="_blank" class="contact-card">
+              <div class="contact-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div>
+                <span class="contact-card-label">LinkedIn</span>
+                <span class="contact-card-value">omkar-patil03</span>
+              </div>
+            </a>
+            <a href="https://github.com/omkarsp03" target="_blank" class="contact-card">
+              <div class="contact-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </div>
+              <div>
+                <span class="contact-card-label">GitHub</span>
+                <span class="contact-card-value">omkarsp03</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-logo">
+          <span class="logo-bracket">&lt;</span>OP<span class="logo-bracket"> /&gt;</span>
+        </span>
+        <p>Designed & Built by Omkar Patil</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/omkarsp03" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/omkar-patil03" target="_blank">LinkedIn</a>
+        <a href="mailto:omkarsp87@gmail.com">Email</a>
+      </div>
+      <p class="footer-copy">© 2026 Omkar Patil. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
